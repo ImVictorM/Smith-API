@@ -2,15 +2,15 @@ import { IProduct, IProductServiceResponse } from '../interfaces';
 import { ProductModel, connection } from '../models';
 
 export default class ProductService {
-  private ProductModel: ProductModel;
+  private productModel: ProductModel;
 
   constructor() {
-    this.ProductModel = new ProductModel(connection);
+    this.productModel = new ProductModel(connection);
   }
 
   createOneProductInteraction = async (productFromReq: IProduct)
   : Promise<IProductServiceResponse> => {
-    const createdProduct = await this.ProductModel.createOneProducts(productFromReq);
+    const createdProduct = await this.productModel.createOneProducts(productFromReq);
     return { errorCode: null, response: createdProduct };
   };
 }
