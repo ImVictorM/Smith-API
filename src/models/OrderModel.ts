@@ -10,7 +10,7 @@ export default class OrderModel {
 
   findAllOrders = async (): Promise<IOrder[]> => {
     const query = `
-    SELECT orders.id, orders.user_id, JSON_ARRAYAGG(products.id) as productsIds
+    SELECT orders.id, orders.user_id as userId, JSON_ARRAYAGG(products.id) as productsIds
     FROM Trybesmith.orders as orders
     INNER JOIN Trybesmith.products as products
     ON products.order_id = orders.id
