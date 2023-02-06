@@ -11,5 +11,5 @@ export default class OrderService {
   findAllOrdersInteraction = async (): Promise<IOrderServiceResponse> => {
     const orders = await this.orderModel.findAllOrders();
     return { errorCode: null, response: orders };
-  }
+  };
 }

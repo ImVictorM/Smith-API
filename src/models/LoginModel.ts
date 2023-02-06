@@ -1,5 +1,5 @@
-import { Pool, RowDataPacket } from "mysql2/promise";
-import { ILogin, IUser } from "../interfaces";
+import { Pool, RowDataPacket } from 'mysql2/promise';
+import { ILogin, IUser } from '../interfaces';
 
 export default class LoginModel {
   private connection: Pool;
