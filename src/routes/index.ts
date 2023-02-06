@@ -1,3 +1,2 @@
-import productsRouter from './productsRoutes';
-
-export default productsRouter;
+export { default as productRoutes } from './productRoutes';
+export { default as userRoutes } from './userRoutes';

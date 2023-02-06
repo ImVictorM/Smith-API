@@ -1,1 +1,2 @@
-export * from './ProductsInterfaces';
+export * from './ProductInterface';
+export * from './UserInterface';

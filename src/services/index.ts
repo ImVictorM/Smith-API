@@ -1,3 +1,2 @@
-import ProductService from './ProductService';
-
-export default ProductService;
+export { default as ProductService } from './ProductService';
+export { default as UserService } from './UserService';
