@@ -23,5 +23,5 @@ export default class ProductModel {
     const query = 'SELECT * FROM Trybesmith.products';
     const [products] = await this.connection.execute<RowDataPacket[]>(query);
     return products as IProduct[];
-  }
+  };
 }

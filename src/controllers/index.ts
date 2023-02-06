@@ -1,3 +1,3 @@
-import ProductController from "./ProductController";
+import ProductController from './ProductController';
 
 export default ProductController;
