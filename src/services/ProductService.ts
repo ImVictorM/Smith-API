@@ -13,4 +13,9 @@ export default class ProductService {
     const createdProduct = await this.productModel.createOneProducts(productFromReq);
     return { errorCode: null, response: createdProduct };
   };
+
+  findAllProductsInteraction = async (): Promise<IProductServiceResponse> => {
+    const products = await this.productModel.findAllProducts();
+    return { errorCode: null, response: products };
+  }
 }
