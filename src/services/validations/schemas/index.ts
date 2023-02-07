@@ -1,1 +1,3 @@
-export * from './loginSchema';
+import loginReqPattern from './loginSchema';
+
+export default loginReqPattern;

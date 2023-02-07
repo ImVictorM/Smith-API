@@ -1,5 +1,5 @@
-import { ILogin, ILoginServiceResponse } from "../../interfaces";
-import { loginReqPattern } from "./schemas";
+import { ILogin, ILoginServiceResponse } from '../../interfaces';
+import loginReqPattern from './schemas';
 
 function validateLoginReq(loginData: ILogin): ILoginServiceResponse {
   const { error } = loginReqPattern.validate(loginData);
@@ -10,6 +10,4 @@ function validateLoginReq(loginData: ILogin): ILoginServiceResponse {
   return { errorCode: null, response: '' };
 }
 
-export {
-  validateLoginReq,
-};
+export default validateLoginReq;

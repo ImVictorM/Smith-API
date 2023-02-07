@@ -1,1 +1,3 @@
-export * from './loginValidation';
+import validateLoginReq from './loginValidation';
+
+export default validateLoginReq;

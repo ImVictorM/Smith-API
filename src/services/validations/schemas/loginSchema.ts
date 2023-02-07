@@ -5,6 +5,4 @@ const loginReqPattern = Joi.object({
   password: Joi.string().required(),
 });
 
-export {
-  loginReqPattern,
-};
+export default loginReqPattern;
