@@ -9,15 +9,18 @@ function authToken(req: Request, res: Response, next: NextFunction) {
   if (!token) {
     return res.status(401).json({ message: 'Token not found' });
   }
-  const user = jwt.verify(token, secret, { algorithms: ['HS256'] }) as IUser;
-  if (!user) {
+  try {
+    const user = jwt.verify(token, secret, { algorithms: ['HS256'] }) as IUser;
+    req.body = {
+      requestData: { ...req.body },
+      userId: user.id,
+    };
+  return next();
+  } catch (error) {
+    console.error(error);
     return res.status(401).json({ message: 'Invalid token' });
   }
-  req.body = {
-    ...req.body,
-    userId: user.id,
-  };
-  return next();
+  
 }
 
 export default authToken;
