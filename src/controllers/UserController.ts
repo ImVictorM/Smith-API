@@ -10,7 +10,10 @@ export default class UserController {
 
   requestCreateNewUser = async (req: Request, res: Response) => {
     const userFromReq = req.body;
-    const { response } = await this.userService.createNewUserInteraction(userFromReq);
+    const { response, errorCode } = await this.userService.createNewUserInteraction(userFromReq);
+    if (errorCode) {
+      return res.status(errorCode).json({ message: response });
+    }
     return res.status(201).json({ token: response });
   };
 }
