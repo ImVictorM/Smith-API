@@ -15,12 +15,11 @@ function authToken(req: Request, res: Response, next: NextFunction) {
       requestData: { ...req.body },
       userId: user.id,
     };
-  return next();
+    return next();
   } catch (error) {
     console.error(error);
     return res.status(401).json({ message: 'Invalid token' });
   }
-  
 }
 
 export default authToken;
