@@ -15,7 +15,8 @@ export default class OrderController {
 
   requestCreateNewOrder = async (req: Request, res: Response) => {
     const { userId, order } = req.body;
-    const { errorCode, response } = await this.orderService.createNewOrderInteraction(userId, order);
+    const { errorCode, response } = await this.orderService
+      .createNewOrderInteraction(userId, order);
     if (errorCode) {
       return res.status(errorCode).json({ message: response });
     }
