@@ -10,7 +10,11 @@ export default class ProductController {
 
   requestCreateOneProduct = async (req: Request, res: Response) => {
     const productFromReq = req.body;
-    const { response } = await this.productService.createOneProductInteraction(productFromReq);
+    const { response, errorCode } = await this.productService
+      .createOneProductInteraction(productFromReq);
+    if (errorCode) {
+      return res.status(errorCode).json({ message: response });
+    }
     return res.status(201).json(response);
   };
 

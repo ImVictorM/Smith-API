@@ -1,5 +1,6 @@
 import { IProduct, IProductServiceResponse } from '../interfaces';
 import { ProductModel, connection } from '../models';
+import { validateProductReq } from './validations';
 
 export default class ProductService {
   private productModel: ProductModel;
@@ -10,6 +11,10 @@ export default class ProductService {
 
   createOneProductInteraction = async (productFromReq: IProduct)
   : Promise<IProductServiceResponse> => {
+    const validationResponse = validateProductReq(productFromReq);
+    if (validationResponse.errorCode) {
+      return validationResponse;
+    }
     const createdProduct = await this.productModel.createOneProducts(productFromReq);
     return { errorCode: null, response: createdProduct };
   };

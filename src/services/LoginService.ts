@@ -1,7 +1,7 @@
 import jwt, { Secret } from 'jsonwebtoken';
 import { ILogin, ILoginServiceResponse } from '../interfaces';
 import { connection, LoginModel } from '../models';
-import validateLoginReq from './validations';
+import { validateLoginReq } from './validations';
 
 export default class LoginService {
   private loginModel: LoginModel;
