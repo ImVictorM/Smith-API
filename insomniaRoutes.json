@@ -47,7 +47,7 @@
       "parentId": null,
       "modified": 1675710969075,
       "created": 1675710969075,
-      "name": "Trybesmith",
+      "name": "Smith API",
       "description": "",
       "scope": "collection",
       "_type": "workspace"
@@ -203,7 +203,7 @@
       "parentId": "wrk_c438f648d5dd4647b91810e87b09e509",
       "modified": 1675710969076,
       "created": 1675710969076,
-      "fileName": "Trybesmith",
+      "fileName": "Smith API",
       "contents": "",
       "contentType": "yaml",
       "_type": "api_spec"
