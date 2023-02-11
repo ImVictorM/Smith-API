@@ -137,7 +137,8 @@ docker exec -it trybesmith bash
 npm install
 ```
     
-5. Create (or recreate) and populate the database
+5. (Optional) Create/recreate and populate the database 
+> if this step fails, wait a while untill the mysql container is running propperly
 ```
 npm run db:create
 ```
@@ -162,7 +163,8 @@ npm install
 
 3. Rename the file `.env.example` to `.env`
     
-4. Create (or recreate) and populate the database
+4. (Optional) Create/recreate and populate the database
+
 ```
 npm run db:create
 ```
