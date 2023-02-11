@@ -136,8 +136,13 @@ docker exec -it trybesmith bash
 ```
 npm install
 ```
+    
+5. Create (or recreate) and populate the database
+```
+npm run db:create
+```
 
-5. Start the server
+6. Start the server
 ```
 npm run start
 ---- or ----
@@ -156,8 +161,13 @@ npm install
 ```
 
 3. Rename the file `.env.example` to `.env`
+    
+4. Create (or recreate) and populate the database
+```
+npm run db:create
+```
 
-4. Start the server
+5. Start the server
 ```
 npm run start
 ---- or ----
