@@ -9,7 +9,7 @@ async function createDB(): Promise<void> {
     const fileName = 'Trybesmith.sql';
     const filePath = path.resolve(cwd(), fileName);
     const fullSql = fs.readFileSync(filePath).toString();
-    const queries = fullSql.split(';').filter((sql) => sql.trim());
+    const queries = fullSql.split(';').filter((sql: string) => sql.trim());
     for (let index = 0; index < queries.length; index += 1) {
       const query = queries[index];
       // eslint-disable-next-line no-await-in-loop
